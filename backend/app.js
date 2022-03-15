@@ -12,6 +12,7 @@ const usersRouter = require("./routes/users");
 const paymentsRouter = require("./routes/payments");
 const reservationRouter = require("./routes/reservation");
 const authRouter = require("./routes/auth");
+const templateRouter = require("./routes/template");
 // const loginRouter = require('./routes/login');
 const loginRequired = require("./middlewares/login-required");
 // const session = require("express-session");
@@ -59,7 +60,7 @@ app.use(passport.initialize());
 // app.use(passport.session());
 
 app.use("/", indexRouter);
-
+app.use("/template", templateRouter);
 app.use("/auth", authRouter);
 // app.use('/google', GoogleRouter);
 
